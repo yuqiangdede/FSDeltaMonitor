@@ -61,3 +61,11 @@ bash fsdelta.sh --path /tmp/fsdelta-demo --mode dir --depth 2 --interval 2 --top
 # 另开终端执行:
 dd if=/dev/zero of=/tmp/fsdelta-demo/a/grow.bin bs=1M count=20 oflag=append conv=notrunc
 ```
+
+## 常见问题
+
+```bash
+# 如果脚本在 Linux 上提示 Windows 行尾（CRLF）问题，可执行：
+sed -i 's/\r$//' fsdelta.sh
+chmod +x fsdelta.sh
+```
